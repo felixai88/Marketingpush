@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="cmdweb.png">
+<link rel="icon" type="image/x-icon" href="cmdweb.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('cmd.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center; /* Center background initially */
+            color: white; /* White text for better contrast */
+            position: relative; /* For absolute positioning of the logo */
+            overflow: hidden; /* Prevent overflow */
+            
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: center top; /* Start at top */
+            }
+            100% {
+                background-position: center bottom; /* End at bottom */
+            }
+        }
+
+        .zigzag-logo {
+            position: absolute; /* Let it stay in background */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center it perfectly */
+            width: 100px; /* Adjust logo size */
+            height: auto;
+            animation: diagonal 30s infinite; /* Add diagonal animation */
+            opacity: 0.8; /* Make it slightly transparent */
+            border-radius: 50%; /* Make it circular */
+            box-shadow: 0 0 20px rgba(30, 144, 255, 1), 0 0 40px rgba(30, 144, 255, 0.5); /* Glow effect */
+            z-index: -1; /* Send it to the background */
+        }
+
+        @keyframes diagonal {
+    0% {
+        transform: translate(-50%, -50%) translate(0, 0); /* Initial position */
+    }
+    20% {
+        transform: translate(-50%, -50%) translate(-15vw, -15vh); /* Move down-left */
+    }
+    40% {
+        transform: translate(-50%, -50%) translate(15vw, 15vh); /* Move down-right */
+    }
+    60% {
+        transform: translate(-50%, -50%) translate(-15vw, 15vh); /* Move up-left */
+    }
+    80% {
+        transform: translate(-50%, -50%) translate(15vw, -15vh); /* Move up-right */
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(0, 0); /* Back to center */
+    }
+
+
+
+
+
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+            z-index: 1; /* Bring title above logo */
+        }
+
+        .button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgba(30, 144, 255, 0.8); /* Semi-transparent blue */
+            color: white;
+            transition: background-color 0.3s, transform 0.2s, opacity 0.2s; /* Include opacity transition */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect for buttons */
+            width: 250px; /* Fixed width for uniformity */
+            text-align: center; /* Center text */
+            position: relative; /* For absolute positioning of the animation */
+            z-index: 1; /* Bring buttons above logo */
+        }
+
+        /* Scale effect when clicked */
+        .button:active {
+            transform: scale(0.95); /* Scale down slightly on click */
+            opacity: 0.7; /* Slightly reduce opacity on click */
+        }
+
+        /* Hover effect */
+        .button:hover {
+            background-color: rgba(30, 144, 255, 1); /* Full color on hover */
+            transform: translateY(-3px); /* Lift effect */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="cmd.jpg" alt="Logo" class="zigzag-logo"> <!-- Tambahkan logo di sini -->
+
+    <button class="button" onclick="location.href='DATUN.html'">Datun</button>
+    <button class="button" onclick="location.href='datunsyariah.html'">Dana Tunai Syar'iah</button>
+    <button class="button" onclick="location.href='loan/index (1).php'">Kalkulator</button>
+</body>
+</html>
